@@ -1,0 +1,27 @@
+{% load static%}
+<html lang = "en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First webpage</title>
+    <link rel ="stylesheet" href="{% static 'polls/bootstrap.css'%}">
+  </head>
+  <body>
+  <div class="jumbotron jumbotron-fluid">
+     <div class="container">
+       <h1 class="display-4">QUESTION PAGE</h1>
+     </div>
+    <div class=container>   
+  <ul class="list-group">
+    {% for q in questions %}
+    <a href="{% url 'polls:detail' q.id %}">
+     <li class="list-group-item disabled" aria-disabled="true"> 
+      {{q.question_text}} - {{q.pub_date}}
+     </li> 
+    </a> 
+    {% endfor %}
+
+    </ul>
+    </div>
+  </body>
+</html>

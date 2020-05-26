@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+  {{question.question_text}} - {{question.pub_date}}
+    <ul>
+      <form action="{% url 'polls:vote' question.id %}" method="POST">
+      {% csrf_token %}
+      {% for choice in question.choice_set.all %}
+       <li>
+         {{ choice.choice_text}} 
+         <input type="radio"
+          id="{{choice.id}}" 
+          name="choice"
+          value="{{choice.id}}"
+          />
+       </li>
+      {% endfor %} 
+      <input type="submit" value="OK" />
+    </form>
+    </ul>
+  </body>
+</html>
+

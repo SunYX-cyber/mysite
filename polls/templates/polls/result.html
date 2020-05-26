@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="{% static 'polls/bootstrap.css'%}">
+  </head>
+  <body>
+   <div class="jumbotron jumbotron-fluid">
+     <div class="container">
+       <h1 class="display-4">{{ question.question_text }}</h1>
+       <p class="lead">
+        This is a pege that you can know the results of the votes.
+       </p>
+      </div>  
+  <ul class="list-group">
+  {% for choice in question.choice_set.all %}
+  <li class="list-group-item disabled" aria-disabled="true">
+  {{choice.choice_text}} --{{ choice.votes }}
+  </li>
+  {% endfor %}
+  </ul>
+  </body>
+</html>

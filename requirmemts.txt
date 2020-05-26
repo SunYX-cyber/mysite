@@ -1,0 +1,15 @@
+asgiref==3.2.7
+astroid @ file:///D:/bld/astroid_1588698392162/work
+certifi==2020.4.5.1
+colorama==0.4.3
+Django @ file:///D:/bld/django_1588599302798/work
+isort==4.3.21
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+pylint @ file:///D:/bld/pylint_1588950593826/work
+pytz==2020.1
+six==1.14.0
+sqlparse==0.3.1
+toml==0.10.0
+wincertstore==0.2
+wrapt==1.11.2
